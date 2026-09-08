@@ -1,0 +1,22 @@
+{
+  "title": "Team",
+  "type": "object",
+  "properties": {
+    "_id": { "type": "string" },
+    "problemId": { "type": "string" },
+    "name": { "type": "string" },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "userId": { "type": "string" },
+          "skillContribution": { "type": "string" },
+          "role": { "type": "string", "enum": ["lead", "member"] }
+        }
+      }
+    },
+    "createdAt": { "type": "string", "format": "date-time" }
+  },
+  "required": ["problemId", "members"]
+}

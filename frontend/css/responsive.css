@@ -1,0 +1,287 @@
+/* ============================================================
+   RESPONSIVE.CSS — Additional breakpoint overrides
+   ============================================================ */
+
+/* ── Grid helpers ────────────────────────────────────────── */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-5); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5); }
+.grid-auto { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--space-5); }
+.grid-auto-sm { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: var(--space-4); }
+
+/* ── Flex helpers ────────────────────────────────────────── */
+.flex { display: flex; }
+.flex-col { display: flex; flex-direction: column; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.flex-wrap { flex-wrap: wrap; }
+.gap-1 { gap: var(--space-1); }
+.gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); }
+.gap-4 { gap: var(--space-4); }
+.gap-5 { gap: var(--space-5); }
+.gap-6 { gap: var(--space-6); }
+.gap-8 { gap: var(--space-8); }
+
+/* ── Spacing helpers ─────────────────────────────────────── */
+.mt-2  { margin-top: var(--space-2); }
+.mt-4  { margin-top: var(--space-4); }
+.mt-6  { margin-top: var(--space-6); }
+.mt-8  { margin-top: var(--space-8); }
+.mb-2  { margin-bottom: var(--space-2); }
+.mb-4  { margin-bottom: var(--space-4); }
+.mb-6  { margin-bottom: var(--space-6); }
+.mb-8  { margin-bottom: var(--space-8); }
+
+/* ── Problems page sidebar+main layout ──────────────────── */
+.feed-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--space-6);
+  padding: var(--space-8) 0;
+}
+
+.feed-sidebar {
+  position: sticky;
+  top: 80px;
+  height: fit-content;
+}
+
+.filter-card {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  padding: var(--space-6);
+}
+
+.filter-section { margin-bottom: var(--space-6); }
+.filter-section:last-child { margin-bottom: 0; }
+
+.filter-section__title {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: var(--space-3);
+}
+
+.filter-options { display: flex; flex-direction: column; gap: var(--space-2); }
+
+.filter-opt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--text-sm);
+  padding: var(--space-2) 0;
+  cursor: pointer;
+  color: var(--color-text-mid);
+  transition: color var(--transition);
+}
+
+.filter-opt:hover { color: var(--color-teal-mid); }
+.filter-opt input { accent-color: var(--color-teal); }
+
+/* ── Profile page layout ─────────────────────────────────── */
+.profile-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--space-6);
+  padding: var(--space-8) 0;
+}
+
+.profile-card {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  padding: var(--space-8);
+  text-align: center;
+  position: sticky;
+  top: 80px;
+  height: fit-content;
+}
+
+.profile-card__name {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  margin: var(--space-4) 0 var(--space-1);
+}
+
+.profile-card__role {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  padding: var(--space-5) 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-5);
+}
+
+.profile-stat { text-align: center; }
+.profile-stat__num { font-family: var(--font-display); font-size: var(--text-xl); }
+.profile-stat__label { font-size: var(--text-xs); color: var(--color-text-muted); }
+
+/* ── Category explorer grid ──────────────────────────────── */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-5);
+}
+
+/* ── Team workspace layout ───────────────────────────────── */
+.team-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--space-6);
+  padding: var(--space-8) 0;
+}
+
+/* ── Problem detail layout ───────────────────────────────── */
+.detail-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: var(--space-6);
+  padding: var(--space-8) 0;
+}
+
+/* ── Notification item ───────────────────────────────────── */
+.notif-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-white);
+  transition: background var(--transition);
+  text-decoration: none;
+  color: inherit;
+}
+
+.notif-item:hover { background: var(--color-off-white); }
+.notif-item.unread { background: var(--color-teal-light); }
+
+.notif-item__icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  background: var(--color-off-white);
+}
+
+.notif-item.unread .notif-item__icon { background: var(--color-white); }
+
+.notif-item__text { font-size: var(--text-sm); line-height: 1.5; }
+.notif-item__text strong { font-weight: 600; color: var(--color-navy); }
+.notif-item__time { font-size: var(--text-xs); color: var(--color-text-muted); margin-top: var(--space-1); }
+
+/* ── Evidence gallery ────────────────────────────────────── */
+.evidence-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--space-3);
+}
+
+.evidence-thumb {
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: var(--color-off-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+
+.evidence-thumb:hover { border-color: var(--color-teal); }
+.evidence-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ── Search bar ──────────────────────────────────────────── */
+.search-bar {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.search-input-wrap {
+  position: relative;
+  flex: 1;
+}
+
+.search-input-wrap svg {
+  position: absolute;
+  left: var(--space-4);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem var(--space-4) 0.75rem 2.75rem;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-white);
+  font-size: var(--text-base);
+  font-family: var(--font-body);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: var(--color-teal);
+  box-shadow: 0 0 0 3px rgba(0,180,166,0.12);
+}
+
+/* ── Responsive breakpoints ──────────────────────────────── */
+@media (max-width: 1024px) {
+  .feed-layout    { grid-template-columns: 1fr; }
+  .feed-sidebar   { display: none; }
+  .detail-layout  { grid-template-columns: 1fr; }
+  .team-layout    { grid-template-columns: 1fr; }
+  .profile-layout { grid-template-columns: 1fr; }
+  .profile-card   { position: static; }
+}
+
+@media (max-width: 768px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .grid-auto { grid-template-columns: 1fr; }
+  .category-grid { grid-template-columns: repeat(2, 1fr); }
+  h2 { font-size: var(--text-xl); }
+}
+
+@media (max-width: 480px) {
+  .category-grid { grid-template-columns: 1fr; }
+  .search-bar { flex-wrap: wrap; }
+}
+
+/* ── Utility ─────────────────────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.w-full { width: 100%; }
+.hidden { display: none !important; }
+.visible { display: block !important; }

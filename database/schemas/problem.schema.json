@@ -1,0 +1,37 @@
+{
+  "title": "Problem",
+  "type": "object",
+  "properties": {
+    "_id": { "type": "string" },
+    "title": { "type": "string" },
+    "description": { "type": "string" },
+    "evidence": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "URLs/paths to uploaded images or documents"
+    },
+    "location": { "type": "string" },
+    "category": {
+      "type": "string",
+      "enum": ["Education", "Healthcare", "Agriculture", "Transportation", "Industry", "Environment", "Water & Sanitation", "Other"]
+    },
+    "expectedOutcome": { "type": "string" },
+    "skillsRequired": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "optional — only set if poster has domain knowledge"
+    },
+    "budget": { "type": "number", "description": "optional" },
+    "postedBy": { "type": "string", "description": "User._id" },
+    "status": {
+      "type": "string",
+      "enum": ["open", "in_progress", "under_review", "solved", "closed"]
+    },
+    "descriptionEmbedding": {
+      "type": "array",
+      "items": { "type": "number" }
+    },
+    "createdAt": { "type": "string", "format": "date-time" }
+  },
+  "required": ["title", "description", "location", "category", "expectedOutcome", "postedBy"]
+}

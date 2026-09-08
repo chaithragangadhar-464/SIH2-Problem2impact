@@ -1,0 +1,151 @@
+/* ============================================================
+   BASE.CSS — Design tokens, reset, typography
+   Problem2Impact | SIH26043
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap');
+
+/* ── Tokens ──────────────────────────────────────────────── */
+:root {
+  /* Palette — civic-tech: deep navy authority + electric teal action + warm saffron accent */
+  --color-navy:       #0D1B2A;
+  --color-navy-mid:   #1B3050;
+  --color-navy-soft:  #2C4A6E;
+  --color-teal:       #00B4A6;
+  --color-teal-light: #E0F7F5;
+  --color-teal-mid:   #009E92;
+  --color-saffron:    #F7941D;
+  --color-saffron-lt: #FEF0DC;
+  --color-white:      #FFFFFF;
+  --color-off-white:  #F5F8FC;
+  --color-border:     #D6E0EC;
+  --color-text:       #0D1B2A;
+  --color-text-mid:   #3B5270;
+  --color-text-muted: #7A94B0;
+  --color-surface:    #FFFFFF;
+  --color-error:      #D9354A;
+  --color-success:    #1AAD72;
+  --color-warning:    #F7941D;
+  --color-badge-bg:   #EAF4FD;
+  --color-badge-text: #1B3050;
+
+  /* Typography */
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  /* Scale */
+  --text-xs:  0.75rem;    /* 12px */
+  --text-sm:  0.875rem;   /* 14px */
+  --text-base:1rem;       /* 16px */
+  --text-md:  1.125rem;   /* 18px */
+  --text-lg:  1.375rem;   /* 22px */
+  --text-xl:  1.75rem;    /* 28px */
+  --text-2xl: 2.25rem;    /* 36px */
+  --text-3xl: 3rem;       /* 48px */
+  --text-4xl: 3.75rem;    /* 60px */
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Radius */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  14px;
+  --radius-xl:  20px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm:  0 1px 3px rgba(13,27,42,0.08);
+  --shadow-md:  0 4px 16px rgba(13,27,42,0.10);
+  --shadow-lg:  0 8px 32px rgba(13,27,42,0.13);
+  --shadow-card:0 2px 8px rgba(13,27,42,0.07), 0 1px 2px rgba(13,27,42,0.04);
+
+  /* Transitions */
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition: 200ms var(--ease);
+}
+
+/* ── Reset ───────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background: var(--color-off-white);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; }
+ul, ol { list-style: none; }
+
+/* ── Typography ──────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+  color: var(--color-navy);
+  font-weight: 400;
+}
+
+h1 { font-size: var(--text-3xl); }
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-xl); }
+h4 { font-size: var(--text-lg); }
+h5 { font-size: var(--text-md); font-family: var(--font-body); font-weight: 600; }
+h6 { font-size: var(--text-base); font-family: var(--font-body); font-weight: 600; }
+
+p { line-height: 1.7; max-width: 72ch; }
+
+strong { font-weight: 600; }
+em { font-style: italic; }
+
+.text-display {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.text-lead {
+  font-size: var(--text-md);
+  color: var(--color-text-mid);
+  line-height: 1.7;
+}
+
+.text-muted { color: var(--color-text-muted); font-size: var(--text-sm); }
+.text-small { font-size: var(--text-sm); }
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

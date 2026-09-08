@@ -1,0 +1,28 @@
+{
+  "title": "Solution",
+  "type": "object",
+  "properties": {
+    "_id": { "type": "string" },
+    "problemId": { "type": "string" },
+    "teamId": { "type": "string" },
+    "approach": { "type": "string" },
+    "prototypeUrl": { "type": "string" },
+    "costEstimate": { "type": "number" },
+    "feasibilityNotes": { "type": "string" },
+    "aiValidation": {
+      "type": "object",
+      "properties": {
+        "isValid": { "type": "boolean" },
+        "similarityScore": { "type": "number" },
+        "flaggedReason": { "type": "string", "description": "e.g. 'low relevance to problem statement'" }
+      }
+    },
+    "reviewStatus": {
+      "type": "string",
+      "enum": ["ai_rejected", "pending_review", "finalized", "not_selected"]
+    },
+    "awardAmount": { "type": "number" },
+    "submittedAt": { "type": "string", "format": "date-time" }
+  },
+  "required": ["problemId", "teamId", "approach"]
+}

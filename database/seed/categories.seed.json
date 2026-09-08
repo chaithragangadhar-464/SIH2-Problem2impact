@@ -1,0 +1,10 @@
+[
+  { "name": "Education" },
+  { "name": "Healthcare" },
+  { "name": "Agriculture" },
+  { "name": "Transportation" },
+  { "name": "Industry" },
+  { "name": "Environment" },
+  { "name": "Water & Sanitation" },
+  { "name": "Other" }
+]
