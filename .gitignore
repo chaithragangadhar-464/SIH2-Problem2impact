@@ -3,6 +3,3 @@ ai-service/.venv/
 ai-service/__pycache__/
 ai-service/**/__pycache__/
 *.pyc
-
-# Node
-backend/node_modules/
