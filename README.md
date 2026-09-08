@@ -458,4 +458,4 @@ AI_SERVICE_URL=http://localhost:8000
 4. **Solution validation AI** — plug into solution submission flow
 5. **Integration + testing** — connect all three, test end to end
 
-Want me to actually generate the starter code (real HTML/CSS/JS files, Express boilerplate, and the FastAPI AI service) instead of just the structure? I can scaffold a working skeleton next.
+Want me to actually generate the starter code (real HTML/CSS/JS files, Express boilerplate, and the FastAPI AI service) instead of just the structure? I can scaffold a working skeleton next..
