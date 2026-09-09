@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile — Problem2Impact</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/forms.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="page-wrapper">
+
+<div id="navbar-placeholder"></div>
+
+<main class="main-content">
+
+  <div style="background:linear-gradient(135deg,var(--color-navy) 0%,var(--color-navy-mid) 100%);height:160px;position:relative">
+    <div style="position:absolute;bottom:-48px;left:50%;transform:translateX(-50%)" id="profile-avatar-wrap">
+      <div class="avatar avatar--xl" id="profile-avatar" style="background:var(--color-teal);color:var(--color-navy);font-size:var(--text-2xl);border:4px solid var(--color-white);box-shadow:var(--shadow-md)">?</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="profile-layout" style="padding-top:var(--space-16)">
+
+      <!-- Left sidebar card -->
+      <aside>
+        <div class="profile-card">
+          <h3 class="profile-card__name" id="profile-name">Loading…</h3>
+          <div class="profile-card__role" id="profile-role"></div>
+          <div id="available-badge" style="margin-bottom:var(--space-4)"></div>
+
+          <div style="font-size:var(--text-sm);color:var(--color-text-muted);margin-bottom:var(--space-1)">📍 <span id="profile-location"></span></div>
+          <div style="font-size:var(--text-sm);color:var(--color-text-muted);margin-bottom:var(--space-5)">🏛️ <span id="profile-org"></span></div>
+
+          <div class="profile-stats">
+            <div class="profile-stat"><div class="profile-stat__num" id="stat-problems">0</div><div class="profile-stat__label">Problems</div></div>
+            <div class="profile-stat"><div class="profile-stat__num" id="stat-solutions">0</div><div class="profile-stat__label">Solutions</div></div>
+            <div class="profile-stat"><div class="profile-stat__num" id="stat-teams">0</div><div class="profile-stat__label">Teams</div></div>
+          </div>
+
+          <div style="margin-bottom:var(--space-4)">
+            <div style="font-size:var(--text-xs);font-weight:700;color:var(--color-text-muted);letter-spacing:.06em;margin-bottom:var(--space-3);text-transform:uppercase">Skills</div>
+            <div class="flex flex-wrap gap-2" id="skills-list"></div>
+          </div>
+
+          <button class="btn btn--ghost btn--full btn--sm" id="edit-skills-btn">✏️ Edit Skills</button>
+          <button class="btn btn--ghost btn--full btn--sm" style="margin-top:var(--space-2)">📷 Edit Profile</button>
+        </div>
+
+        <!-- Badges section -->
+        <div class="card" style="margin-top:var(--space-4)">
+          <div class="card__header"><h5>Badges & Awards</h5></div>
+          <div class="card__body">
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3);text-align:center">
+              <div style="padding:var(--space-3)"><div style="font-size:2rem">🏆</div><div style="font-size:var(--text-xs);color:var(--color-text-muted);margin-top:4px">Winner</div></div>
+              <div style="padding:var(--space-3)"><div style="font-size:2rem">⭐</div><div style="font-size:var(--text-xs);color:var(--color-text-muted);margin-top:4px">Top Solver</div></div>
+              <div style="padding:var(--space-3);opacity:.35"><div style="font-size:2rem">🎖️</div><div style="font-size:var(--text-xs);color:var(--color-text-muted);margin-top:4px">Mentor</div></div>
+              <div style="padding:var(--space-3)"><div style="font-size:2rem">🤝</div><div style="font-size:var(--text-xs);color:var(--color-text-muted);margin-top:4px">Collaborator</div></div>
+              <div style="padding:var(--space-3);opacity:.35"><div style="font-size:2rem">🌟</div><div style="font-size:var(--text-xs);color:var(--color-text-muted);margin-top:4px">Innovator</div></div>
+              <div style="padding:var(--space-3);opacity:.35"><div style="font-size:2rem">🚀</div><div style="font-size:var(--text-xs);color:var(--color-text-muted);margin-top:4px">Launcher</div></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main content -->
+      <div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+          <button class="tab active" data-tab="activity">Activity</button>
+          <button class="tab" data-tab="problems">Problems Posted</button>
+          <button class="tab" data-tab="solutions">Solutions</button>
+          <button class="tab" data-tab="teams">Teams</button>
+        </div>
+
+        <!-- Activity tab -->
+        <div class="tab-panel active" id="tab-activity">
+          <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+            <div class="card">
+              <div class="card__body">
+                <h5 style="margin-bottom:var(--space-4)">Recent Activity</h5>
+                <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+                  <div class="notif-item" style="padding:0;background:transparent;border:none">
+                    <div class="notif-item__icon" style="background:var(--color-teal-light)">✅</div>
+                    <div><div class="notif-item__text">Solution for <strong>Water purification in Rajasthan</strong> passed AI validation</div><div class="notif-item__time">2 days ago</div></div>
+                  </div>
+                  <div class="notif-item" style="padding:0;background:transparent;border:none">
+                    <div class="notif-item__icon" style="background:var(--color-saffron-lt)">👥</div>
+                    <div><div class="notif-item__text">Joined team <strong>AquaTech Collective</strong></div><div class="notif-item__time">5 days ago</div></div>
+                  </div>
+                  <div class="notif-item" style="padding:0;background:transparent;border:none">
+                    <div class="notif-item__icon" style="background:var(--color-badge-bg)">📝</div>
+                    <div><div class="notif-item__text">Posted problem: <strong>Air quality monitoring in industrial zones</strong></div><div class="notif-item__time">10 days ago</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Problems tab -->
+        <div class="tab-panel" id="tab-problems">
+          <div id="problems-posted-list">
+            <div class="flex-center" style="padding:var(--space-8)"><div class="spinner"></div></div>
+          </div>
+          <a href="/post-problem.html" class="btn btn--primary btn--sm" style="margin-top:var(--space-4)">+ Post a new problem</a>
+        </div>
+
+        <!-- Solutions tab -->
+        <div class="tab-panel" id="tab-solutions">
+          <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+            <div class="card">
+              <div class="card__body">
+                <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:var(--space-3)">
+                  <div>
+                    <div style="font-weight:600">Water Purification System — AquaTech Collective</div>
+                    <div style="font-size:var(--text-xs);color:var(--color-text-muted)">Submitted 2 days ago</div>
+                  </div>
+                  <span class="badge badge--navy">⏳ Pending Review</span>
+                </div>
+                <p style="font-size:var(--text-sm);color:var(--color-text-muted)">Solar-powered RO filtration with IoT sensors for real-time water quality monitoring…</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card__body">
+                <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:var(--space-3)">
+                  <div>
+                    <div style="font-weight:600">Crop Disease Detection App</div>
+                    <div style="font-size:var(--text-xs);color:var(--color-text-muted)">Submitted 3 weeks ago</div>
+                  </div>
+                  <span class="badge badge--success">✓ Finalized</span>
+                </div>
+                <p style="font-size:var(--text-sm);color:var(--color-text-muted)">ML model with offline capabilities for identifying 30+ crop diseases from smartphone photos…</p>
+                <div style="margin-top:var(--space-4);padding:var(--space-4);background:var(--color-saffron-lt);border-radius:var(--radius-md);font-size:var(--text-sm)">
+                  🏆 Awarded <strong>₹75,000</strong> by Maharashtra Agriculture Department
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Teams tab -->
+        <div class="tab-panel" id="tab-teams">
+          <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+            <a href="/team.html?id=t1" class="card card--hover" style="text-decoration:none">
+              <div class="card__body">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-3)">
+                  <h5>AquaTech Collective</h5>
+                  <span class="badge badge--teal">Active</span>
+                </div>
+                <div style="font-size:var(--text-sm);color:var(--color-text-muted)">Problem: Lack of clean drinking water in rural Rajasthan</div>
+                <div style="display:flex;align-items:center;gap:var(--space-3);margin-top:var(--space-3)">
+                  <div class="avatar-group">
+                    <div class="avatar avatar--sm" style="background:var(--color-teal-light);color:var(--color-teal-mid)">AS</div>
+                    <div class="avatar avatar--sm" style="background:var(--color-saffron-lt);color:#c4720e">RK</div>
+                    <div class="avatar avatar--sm" style="background:var(--color-badge-bg);color:var(--color-badge-text)">ST</div>
+                  </div>
+                  <span style="font-size:var(--text-xs);color:var(--color-text-muted)">3 members · Lead</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script type="module">
+import { renderNavbar, renderFooter } from './js/navbar.js';
+renderNavbar();
+renderFooter();
+
+// Tabs
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(`tab-${tab.dataset.tab}`)?.classList.add('active');
+  });
+});
+</script>
+<script type="module" src="js/profile.js"></script>
+</body>
+</html>

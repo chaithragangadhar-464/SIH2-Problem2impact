@@ -6,3 +6,6 @@ ai-service/**/__pycache__/
 
 # Node
 **/node_modules/
+
+.env
+

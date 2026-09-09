@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Problem2Impact — India's Problem-Solving Platform</title>
+  <meta name="description" content="Citizens post real problems. Students, engineers and innovators solve them. Government and industry fund and implement the best solutions." />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="page-wrapper">
+
+<div id="navbar-placeholder"></div>
+
+<main class="main-content">
+
+  <!-- ── Hero ─────────────────────────────────────────────── -->
+  <section style="background:linear-gradient(135deg,var(--color-navy) 0%,var(--color-navy-mid) 60%,#1a3a5c 100%);padding:var(--space-24) 0 var(--space-20);position:relative;overflow:hidden">
+    <!-- decorative blobs -->
+    <div style="position:absolute;top:-80px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(0,180,166,0.12) 0%,transparent 70%);pointer-events:none"></div>
+    <div style="position:absolute;bottom:-100px;left:-60px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(247,148,29,0.08) 0%,transparent 70%);pointer-events:none"></div>
+
+    <div class="container" style="position:relative;z-index:1">
+      <div style="max-width:780px">
+        <div style="display:inline-flex;align-items:center;gap:var(--space-2);background:rgba(0,180,166,0.15);border:1px solid rgba(0,180,166,0.3);border-radius:var(--radius-full);padding:.35rem var(--space-4);margin-bottom:var(--space-6)">
+          <span style="width:7px;height:7px;border-radius:50%;background:var(--color-teal);animation:pulse 2s infinite"></span>
+          <span style="font-size:var(--text-xs);font-weight:600;color:var(--color-teal);letter-spacing:.04em">Smart India Hackathon 2026 — SIH26043</span>
+        </div>
+
+        <h1 class="text-display" style="color:var(--color-white);margin-bottom:var(--space-5)">
+          From problems to<br>
+          <span style="color:var(--color-teal)">real impact</span>
+        </h1>
+
+        <p class="text-lead" style="color:rgba(255,255,255,0.72);max-width:58ch;margin-bottom:var(--space-8)">
+          Citizens post the challenges they face. <span id="hero-typing" style="color:var(--color-teal);font-weight:600;border-right:2px solid var(--color-teal);padding-right:2px">students</span> solve them. Government and industry fund and implement the best solutions.
+        </p>
+
+        <div style="display:flex;gap:var(--space-4);flex-wrap:wrap">
+          <a href="/post-problem.html" class="btn btn--primary btn--xl">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Post a Problem
+          </a>
+          <a href="/explore-challenges.html" class="btn btn--white btn--xl">Explore Challenges</a>
+        </div>
+      </div>
+
+      <!-- floating stat cards -->
+      <div style="display:flex;gap:var(--space-4);margin-top:var(--space-12);flex-wrap:wrap">
+        <div style="background:rgba(255,255,255,0.07);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-lg);padding:var(--space-5) var(--space-6)">
+          <div style="font-family:var(--font-display);font-size:var(--text-2xl);color:var(--color-teal)" data-counter="1240" data-suffix="+">0+</div>
+          <div style="font-size:var(--text-xs);color:rgba(255,255,255,0.55);margin-top:var(--space-1)">Problems Posted</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.07);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-lg);padding:var(--space-5) var(--space-6)">
+          <div style="font-family:var(--font-display);font-size:var(--text-2xl);color:var(--color-teal)" data-counter="387" data-suffix="+">0+</div>
+          <div style="font-size:var(--text-xs);color:rgba(255,255,255,0.55);margin-top:var(--space-1)">Problems Solved</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.07);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-lg);padding:var(--space-5) var(--space-6)">
+          <div style="font-family:var(--font-display);font-size:var(--text-2xl);color:var(--color-teal)" data-counter="4200" data-suffix="+">0+</div>
+          <div style="font-size:var(--text-xs);color:rgba(255,255,255,0.55);margin-top:var(--space-1)">Innovators Registered</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.07);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-lg);padding:var(--space-5) var(--space-6)">
+          <div style="font-family:var(--font-display);font-size:var(--text-2xl);color:var(--color-saffron)">₹2.4Cr+</div>
+          <div style="font-size:var(--text-xs);color:rgba(255,255,255,0.55);margin-top:var(--space-1)">Awards Distributed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── How it works ──────────────────────────────────────── -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section__header text-center" style="text-align:center">
+        <h2 class="section__title">How Problem2Impact works</h2>
+        <p class="section__subtitle" style="margin:0 auto">A four-step journey from real problem to real-world implementation</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--space-6);margin-top:var(--space-10)">
+        <div style="text-align:center;padding:var(--space-6)">
+          <div style="width:64px;height:64px;border-radius:var(--radius-xl);background:var(--color-teal-light);display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-5);font-size:1.75rem">📝</div>
+          <div style="font-size:var(--text-xs);font-weight:700;color:var(--color-teal-mid);letter-spacing:.08em;margin-bottom:var(--space-2)">STEP 1</div>
+          <h4 style="margin-bottom:var(--space-2)">Post a Problem</h4>
+          <p style="font-size:var(--text-sm);color:var(--color-text-muted)">Any citizen can describe their real-world challenge with evidence, location, and expected outcome.</p>
+        </div>
+        <div style="text-align:center;padding:var(--space-6)">
+          <div style="width:64px;height:64px;border-radius:var(--radius-xl);background:var(--color-teal-light);display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-5);font-size:1.75rem">🤖</div>
+          <div style="font-size:var(--text-xs);font-weight:700;color:var(--color-teal-mid);letter-spacing:.08em;margin-bottom:var(--space-2)">STEP 2</div>
+          <h4 style="margin-bottom:var(--space-2)">AI Matches Teams</h4>
+          <p style="font-size:var(--text-sm);color:var(--color-text-muted)">Our AI analyses skills needed and suggests the best-matched innovators from universities and industry.</p>
+        </div>
+        <div style="text-align:center;padding:var(--space-6)">
+          <div style="width:64px;height:64px;border-radius:var(--radius-xl);background:var(--color-teal-light);display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-5);font-size:1.75rem">💡</div>
+          <div style="font-size:var(--text-xs);font-weight:700;color:var(--color-teal-mid);letter-spacing:.08em;margin-bottom:var(--space-2)">STEP 3</div>
+          <h4 style="margin-bottom:var(--space-2)">Teams Solve</h4>
+          <p style="font-size:var(--text-sm);color:var(--color-text-muted)">Cross-university and industry teams collaborate, submit solutions, and get instant AI validation feedback.</p>
+        </div>
+        <div style="text-align:center;padding:var(--space-6)">
+          <div style="width:64px;height:64px;border-radius:var(--radius-xl);background:var(--color-saffron-lt);display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-5);font-size:1.75rem">🏆</div>
+          <div style="font-size:var(--text-xs);font-weight:700;color:var(--color-saffron);letter-spacing:.08em;margin-bottom:var(--space-2)">STEP 4</div>
+          <h4 style="margin-bottom:var(--space-2)">Funded & Implemented</h4>
+          <p style="font-size:var(--text-sm);color:var(--color-text-muted)">Government or industry finalizes the best solution, awards the team, and implements it in the real world.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Recent problems ───────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-8);flex-wrap:wrap;gap:var(--space-4)">
+        <div>
+          <h2 style="margin-bottom:var(--space-2)">Recent Problems</h2>
+          <p style="color:var(--color-text-muted);font-size:var(--text-sm)">Latest challenges posted by citizens across India</p>
+        </div>
+        <a href="/problems.html" class="btn btn--ghost">View all problems →</a>
+      </div>
+      <div class="grid-auto" id="recent-problems">
+        <!-- populated by home.js -->
+        <div class="flex-center" style="padding:var(--space-16);grid-column:1/-1"><div class="spinner"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Explore by category ───────────────────────────────── -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section__header" style="text-align:center">
+        <h2 class="section__title">Explore by Category</h2>
+        <p class="section__subtitle" style="margin:0 auto">Find challenges in areas you care about and have expertise in</p>
+      </div>
+      <div class="category-grid" style="margin-top:var(--space-8)">
+        <a href="/explore-challenges.html?category=education"        class="category-card"><div class="category-card__icon">🎓</div><div class="category-card__name">Education</div><div class="category-card__count">23 problems</div></a>
+        <a href="/explore-challenges.html?category=healthcare"       class="category-card"><div class="category-card__icon">🏥</div><div class="category-card__name">Healthcare</div><div class="category-card__count">18 problems</div></a>
+        <a href="/explore-challenges.html?category=agriculture"      class="category-card"><div class="category-card__icon">🌾</div><div class="category-card__name">Agriculture</div><div class="category-card__count">31 problems</div></a>
+        <a href="/explore-challenges.html?category=transportation"   class="category-card"><div class="category-card__icon">🚌</div><div class="category-card__name">Transportation</div><div class="category-card__count">12 problems</div></a>
+        <a href="/explore-challenges.html?category=environment"      class="category-card"><div class="category-card__icon">🌿</div><div class="category-card__name">Environment</div><div class="category-card__count">15 problems</div></a>
+        <a href="/explore-challenges.html?category=water-sanitation" class="category-card"><div class="category-card__icon">💧</div><div class="category-card__name">Water & Sanitation</div><div class="category-card__count">27 problems</div></a>
+        <a href="/explore-challenges.html?category=industry"         class="category-card"><div class="category-card__icon">🏭</div><div class="category-card__name">Industry</div><div class="category-card__count">9 problems</div></a>
+        <a href="/explore-challenges.html?category=other"            class="category-card"><div class="category-card__icon">📌</div><div class="category-card__name">Other</div><div class="category-card__count">6 problems</div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AI Feature highlight ──────────────────────────────── -->
+  <section class="section" style="background:linear-gradient(135deg,var(--color-navy) 0%,var(--color-navy-mid) 100%)">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-12);align-items:center">
+        <div>
+          <div class="ai-badge" style="margin-bottom:var(--space-5)">🤖 AI-Powered Matching</div>
+          <h2 style="color:var(--color-white);margin-bottom:var(--space-5)">Smart skill matching for every problem</h2>
+          <p style="color:rgba(255,255,255,0.7);margin-bottom:var(--space-6);line-height:1.8">Our AI uses sentence embeddings to analyse each problem and match it with the best-suited innovators — from university students to industry professionals — based on their skills and experience.</p>
+          <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+            <div style="display:flex;align-items:center;gap:var(--space-3)"><div style="width:36px;height:36px;border-radius:50%;background:rgba(0,180,166,0.2);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0">✓</div><span style="color:rgba(255,255,255,0.8);font-size:var(--text-sm)">Percentage match scores for every problem-person pair</span></div>
+            <div style="display:flex;align-items:center;gap:var(--space-3)"><div style="width:36px;height:36px;border-radius:50%;background:rgba(0,180,166,0.2);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0">✓</div><span style="color:rgba(255,255,255,0.8);font-size:var(--text-sm)">Automatic detection of defective or irrelevant solutions</span></div>
+            <div style="display:flex;align-items:center;gap:var(--space-3)"><div style="width:36px;height:36px;border-radius:50%;background:rgba(0,180,166,0.2);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0">✓</div><span style="color:rgba(255,255,255,0.8);font-size:var(--text-sm)">Skill gap detection and targeted invite suggestions</span></div>
+            <div style="display:flex;align-items:center;gap:var(--space-3)"><div style="width:36px;height:36px;border-radius:50%;background:rgba(0,180,166,0.2);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0">✓</div><span style="color:rgba(255,255,255,0.8);font-size:var(--text-sm)">Duplicate problem detection to avoid redundancy</span></div>
+          </div>
+        </div>
+
+        <!-- Mock AI panel -->
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-xl);padding:var(--space-6)">
+          <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-5)">
+            <div class="ai-badge">🤖 AI</div>
+            <div style="color:var(--color-white);font-weight:600;font-size:var(--text-sm)">Top Matches — Water Purification Problem</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+            <div class="match-item" style="background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.1)">
+              <div class="avatar" style="background:var(--color-teal-light);color:var(--color-teal-mid)">AS</div>
+              <div class="match-item__info"><div class="match-item__name" style="color:var(--color-white)">Ananya Sharma</div><div class="match-item__meta">Civil Engineering · IIT Delhi</div></div>
+              <div class="match-bar"><div class="match-bar__fill" style="width:94%"></div></div>
+              <div class="match-pct">94%</div>
+            </div>
+            <div class="match-item" style="background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.1)">
+              <div class="avatar" style="background:var(--color-saffron-lt);color:#c4720e">KR</div>
+              <div class="match-item__info"><div class="match-item__name" style="color:var(--color-white)">Karthik Rajan</div><div class="match-item__meta">IoT, Embedded · IIT Madras</div></div>
+              <div class="match-bar"><div class="match-bar__fill" style="width:87%"></div></div>
+              <div class="match-pct">87%</div>
+            </div>
+            <div class="match-item" style="background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.1)">
+              <div class="avatar" style="background:#EAF4FD;color:var(--color-navy)">PS</div>
+              <div class="match-item__info"><div class="match-item__name" style="color:var(--color-white)">Priyanka Singh</div><div class="match-item__meta">Data Analysis · BITS Pilani</div></div>
+              <div class="match-bar"><div class="match-bar__fill" style="width:79%"></div></div>
+              <div class="match-pct">79%</div>
+            </div>
+          </div>
+          <div style="margin-top:var(--space-5);padding:var(--space-4);background:rgba(247,148,29,0.12);border-radius:var(--radius-md);border:1px solid rgba(247,148,29,0.25);font-size:var(--text-xs);color:rgba(255,255,255,0.7)">
+            ⚠️ Team AgriVision: <em>Low relevance detected</em> — solution does not address the stated water purification requirement.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ───────────────────────────────────────────────── -->
+  <section class="section section--white" style="text-align:center">
+    <div class="container container--narrow">
+      <div style="font-size:3rem;margin-bottom:var(--space-4)">🚀</div>
+      <h2 style="margin-bottom:var(--space-4)">Ready to make an impact?</h2>
+      <p class="text-lead" style="margin:0 auto var(--space-8);text-align:center">Join thousands of innovators solving India's most pressing challenges — and get recognized, funded, and awarded for it.</p>
+      <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap">
+        <a href="/register.html" class="btn btn--primary btn--xl">Create Free Account</a>
+        <a href="/problems.html" class="btn btn--ghost btn--xl">Browse Problems</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<style>
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+@media(max-width:768px){
+  section:first-of-type > .container > div:last-child{flex-direction:column}
+  section[style*="grid-template-columns:1fr 1fr"] .container > div{grid-template-columns:1fr!important}
+}
+</style>
+
+<script type="module" src="js/home.js"></script>
+</body>
+</html>

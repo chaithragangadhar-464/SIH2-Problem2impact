@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post a Problem — Problem2Impact</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/forms.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="page-wrapper">
+
+<div id="navbar-placeholder"></div>
+
+<main class="main-content">
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Post a Problem</h1>
+      <p>Describe your challenge clearly so innovators across India can understand and solve it.</p>
+    </div>
+  </div>
+
+  <div class="container container--narrow" style="padding-top:var(--space-10);padding-bottom:var(--space-16)">
+
+    <!-- Overall progress bar -->
+    <div class="progress" style="margin-bottom:var(--space-8)">
+      <div class="progress__fill" id="step-progress" style="width:0%"></div>
+    </div>
+
+    <!-- Step indicator -->
+    <div class="step-indicator" style="margin-bottom:var(--space-8)">
+      <div class="step-item active" data-step="1">
+        <div class="step-circle">1</div>
+        <div class="step-label">Describe</div>
+      </div>
+      <div class="step-connector" data-after="1"></div>
+      <div class="step-item" data-step="2">
+        <div class="step-circle">2</div>
+        <div class="step-label">Evidence</div>
+      </div>
+      <div class="step-connector" data-after="2"></div>
+      <div class="step-item" data-step="3">
+        <div class="step-circle">3</div>
+        <div class="step-label">Location</div>
+      </div>
+      <div class="step-connector" data-after="3"></div>
+      <div class="step-item" data-step="4">
+        <div class="step-circle">4</div>
+        <div class="step-label">Outcome</div>
+      </div>
+      <div class="step-connector" data-after="4"></div>
+      <div class="step-item" data-step="5">
+        <div class="step-circle">5</div>
+        <div class="step-label">Review</div>
+      </div>
+    </div>
+
+    <!-- ── Step 1: Title & Description ─── -->
+    <div class="form-step active" data-step="1">
+      <div style="margin-bottom:var(--space-2)">
+        <h3>Describe your problem</h3>
+        <p style="color:var(--color-text-muted);font-size:var(--text-sm)">Be specific and clear — the better you describe it, the better solutions you'll receive.</p>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="title">Problem Title *</label>
+        <input class="input" type="text" id="title" name="title" placeholder="e.g. Lack of clean drinking water in rural Rajasthan" maxlength="120" data-maxlength="120" />
+        <div style="display:flex;justify-content:space-between">
+          <span class="form-hint">Keep it concise and descriptive</span>
+          <span class="char-count" data-counter-for="title">0/120</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="description">Detailed Description *</label>
+        <textarea class="textarea textarea--tall" id="description" name="description" placeholder="Explain the problem in detail: What is happening? Who is affected? Since when? Why does it matter?&#10;&#10;Example: Hundreds of villages in western Rajasthan rely on contaminated groundwater. Children are most affected, with rising waterborne diseases..." maxlength="3000" data-maxlength="3000"></textarea>
+        <div style="display:flex;justify-content:space-between">
+          <span class="form-hint">Minimum 50 characters. More detail = better solutions.</span>
+          <span class="char-count" data-counter-for="description">0/3000</span>
+        </div>
+      </div>
+
+      <div class="form-step-nav">
+        <span></span>
+        <button class="btn btn--primary" data-next>Continue: Add Evidence →</button>
+      </div>
+    </div>
+
+    <!-- ── Step 2: Evidence ─── -->
+    <div class="form-step" data-step="2">
+      <div style="margin-bottom:var(--space-2)">
+        <h3>Add Evidence</h3>
+        <p style="color:var(--color-text-muted);font-size:var(--text-sm)">Photos, documents or videos that show the problem clearly. This is optional but helps reviewers understand the impact.</p>
+      </div>
+
+      <div class="file-upload" id="evidence-zone">
+        <input type="file" id="evidence-input" multiple accept="image/*,.pdf,.mp4" />
+        <div class="file-upload__icon">📸</div>
+        <div class="file-upload__text">
+          <strong>Click to upload</strong> or drag and drop<br>
+          <span>Photos, PDFs, Videos — up to 5 files, 10MB each</span>
+        </div>
+      </div>
+
+      <div id="file-list" class="file-list"></div>
+
+      <div class="form-step-nav">
+        <button class="btn btn--ghost" data-prev>← Back</button>
+        <button class="btn btn--primary" data-next>Continue: Location →</button>
+      </div>
+    </div>
+
+    <!-- ── Step 3: Location & Category ─── -->
+    <div class="form-step" data-step="3">
+      <div style="margin-bottom:var(--space-2)">
+        <h3>Location & Category</h3>
+        <p style="color:var(--color-text-muted);font-size:var(--text-sm)">Where is this problem occurring, and what domain does it belong to?</p>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="location">Location *</label>
+        <div class="input-wrap">
+          <svg class="input-wrap__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <input class="input" type="text" id="location" name="location" placeholder="e.g. Barmer, Rajasthan" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Category *</label>
+        <div class="category-grid" id="category-radio-grid" style="grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:var(--space-3)"></div>
+      </div>
+
+      <div class="form-step-nav">
+        <button class="btn btn--ghost" data-prev>← Back</button>
+        <button class="btn btn--primary" data-next>Continue: Outcome →</button>
+      </div>
+    </div>
+
+    <!-- ── Step 4: Expected Outcome & Skills ─── -->
+    <div class="form-step" data-step="4">
+      <div style="margin-bottom:var(--space-2)">
+        <h3>Expected Outcome</h3>
+        <p style="color:var(--color-text-muted);font-size:var(--text-sm)">What does a successful solution look like? The more specific, the better.</p>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="expectedOutcome">Expected Outcome *</label>
+        <textarea class="textarea" id="expectedOutcome" name="expectedOutcome" placeholder="e.g. A solar-powered water purification system that provides clean water to at least 500 families, maintainable locally, costing under ₹5 lakhs." maxlength="1000" data-maxlength="1000"></textarea>
+        <div style="display:flex;justify-content:flex-end">
+          <span class="char-count" data-counter-for="expectedOutcome">0/1000</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label form-label--optional" for="budget">Budget / Funding Available (₹)</label>
+        <div class="input-wrap">
+          <svg class="input-wrap__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <input class="input" type="number" id="budget" name="budget" placeholder="e.g. 500000" min="0" />
+        </div>
+        <span class="form-hint">Leave blank if no specific budget is allocated</span>
+      </div>
+
+      <!-- Domain knowledge toggle -->
+      <div class="toggle-wrap">
+        <div>
+          <div style="font-weight:600;font-size:var(--text-sm)">I have domain knowledge about this problem</div>
+          <div style="font-size:var(--text-xs);color:var(--color-text-muted);margin-top:2px">Enable to specify which skills are needed to solve it — helps AI match better candidates</div>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="domain-toggle" />
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <!-- Skills panel (revealed by toggle) -->
+      <div id="skills-panel" style="display:none">
+        <div class="form-group">
+          <label class="form-label">Skills required to solve this problem</label>
+          <div class="flex flex-wrap gap-2" id="skills-wrap"></div>
+          <span class="form-hint">Select all relevant skills. AI will use these to suggest matching innovators.</span>
+        </div>
+      </div>
+
+      <div class="form-step-nav">
+        <button class="btn btn--ghost" data-prev>← Back</button>
+        <button class="btn btn--primary" data-next>Review & Submit →</button>
+      </div>
+    </div>
+
+    <!-- ── Step 5: Review ─── -->
+    <div class="form-step" data-step="5">
+      <div style="margin-bottom:var(--space-4)">
+        <h3>Review & Submit</h3>
+        <p style="color:var(--color-text-muted);font-size:var(--text-sm)">Please check all details before posting your problem publicly.</p>
+      </div>
+
+      <div id="review-panel">
+        <!-- Populated by JS -->
+      </div>
+
+      <div class="form-step-nav" style="margin-top:var(--space-6)">
+        <button class="btn btn--ghost" data-prev>← Edit</button>
+        <button class="btn btn--saffron btn--lg" id="submit-btn">
+          🚀 Post Problem
+        </button>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+<script type="module" src="js/post-problem.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Problem Detail — Problem2Impact</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/forms.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="page-wrapper">
+
+<div id="navbar-placeholder"></div>
+
+<main class="main-content">
+
+  <!-- Header (populated by JS) -->
+  <div class="page-header" id="problem-header-wrap">
+    <div class="container">
+      <div class="breadcrumb" id="breadcrumb"></div>
+      <div id="problem-header">
+        <div class="flex-center" style="padding:var(--space-8)"><div class="spinner"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="detail-layout">
+
+      <!-- Main column -->
+      <div>
+        <!-- Description -->
+        <div class="card" style="margin-bottom:var(--space-5)">
+          <div class="card__body">
+            <div id="problem-description">
+              <div class="flex-center" style="padding:var(--space-8)"><div class="spinner"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evidence -->
+        <div id="evidence-gallery" style="margin-bottom:var(--space-5)"></div>
+
+        <!-- Solutions -->
+        <div class="card">
+          <div class="card__header" style="display:flex;align-items:center;justify-content:space-between">
+            <h4>Solutions <span id="solutions-count" style="font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-text-muted);font-weight:400;margin-left:var(--space-2)">0</span></h4>
+            <a id="submit-solution-link" href="#" class="btn btn--primary btn--sm" id="submit-solution-btn">Submit a Solution</a>
+          </div>
+          <div id="solutions-list" style="padding:var(--space-4)">
+            <div class="flex-center" style="padding:var(--space-8)"><div class="spinner"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside>
+
+        <!-- Action buttons -->
+        <div class="card" style="margin-bottom:var(--space-5)">
+          <div class="card__body" style="display:flex;flex-direction:column;gap:var(--space-3)">
+            <button id="form-team-btn" class="btn btn--primary btn--full btn--lg">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Form / Join a Team
+            </button>
+            <button id="submit-solution-btn" class="btn btn--secondary btn--full">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              Submit a Solution
+            </button>
+          </div>
+        </div>
+
+        <!-- AI Match Panel -->
+        <div class="ai-match-panel" id="ai-match-panel">
+          <div class="ai-match-panel__header">
+            <div>
+              <div class="ai-match-panel__title">AI-Matched Collaborators</div>
+              <div class="ai-match-panel__subtitle">People best suited to solve this problem</div>
+            </div>
+            <div class="ai-badge">🤖 AI</div>
+          </div>
+          <div class="match-list" id="match-list">
+            <div class="flex-center" style="padding:var(--space-6)"><div class="spinner"></div></div>
+          </div>
+          <button class="btn btn--ghost btn--full btn--sm" style="margin-top:var(--space-4)">View all matches</button>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+
+</main>
+
+<div id="footer-placeholder"></div>
+<script type="module" src="js/problem-detail.js"></script>
+</body>
+</html>

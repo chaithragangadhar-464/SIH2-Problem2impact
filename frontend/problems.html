@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse Problems — Problem2Impact</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/forms.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="page-wrapper">
+
+<div id="navbar-placeholder"></div>
+
+<main class="main-content">
+
+  <!-- Page header -->
+  <div class="page-header">
+    <div class="container">
+      <h1>Browse Problems</h1>
+      <p>Discover real challenges posted by citizens across India — and lend your expertise.</p>
+    </div>
+  </div>
+
+  <!-- Category strip -->
+  <div style="background:var(--color-white);border-bottom:1px solid var(--color-border);position:sticky;top:64px;z-index:100">
+    <div class="container" style="padding-top:var(--space-4);padding-bottom:var(--space-4)">
+      <div style="display:flex;gap:var(--space-2);overflow-x:auto;padding-bottom:2px;scrollbar-width:none" id="cat-strip"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="feed-layout">
+
+      <!-- Sidebar filters -->
+      <aside class="feed-sidebar">
+        <div class="filter-card">
+          <h5 style="margin-bottom:var(--space-5)">Filters</h5>
+
+          <div class="filter-section">
+            <div class="filter-section__title">Status</div>
+            <div class="filter-options">
+              <label class="filter-opt"><span>Open</span><input type="checkbox" checked /></label>
+              <label class="filter-opt"><span>In Progress</span><input type="checkbox" /></label>
+              <label class="filter-opt"><span>Under Review</span><input type="checkbox" /></label>
+              <label class="filter-opt"><span>Solved</span><input type="checkbox" /></label>
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <div class="filter-section__title">Category</div>
+            <div class="filter-options">
+              <label class="filter-opt"><span>🎓 Education</span><input type="checkbox" data-filter-cat="education" /></label>
+              <label class="filter-opt"><span>🏥 Healthcare</span><input type="checkbox" data-filter-cat="healthcare" /></label>
+              <label class="filter-opt"><span>🌾 Agriculture</span><input type="checkbox" data-filter-cat="agriculture" /></label>
+              <label class="filter-opt"><span>🚌 Transportation</span><input type="checkbox" data-filter-cat="transportation" /></label>
+              <label class="filter-opt"><span>🌿 Environment</span><input type="checkbox" data-filter-cat="environment" /></label>
+              <label class="filter-opt"><span>💧 Water & Sanitation</span><input type="checkbox" data-filter-cat="water-sanitation" /></label>
+              <label class="filter-opt"><span>🏭 Industry</span><input type="checkbox" data-filter-cat="industry" /></label>
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <div class="filter-section__title">Has Budget</div>
+            <div class="filter-options">
+              <label class="filter-opt"><span>With budget</span><input type="checkbox" /></label>
+              <label class="filter-opt"><span>Without budget</span><input type="checkbox" /></label>
+            </div>
+          </div>
+
+          <button class="btn btn--ghost btn--full btn--sm" style="margin-top:var(--space-2)">Clear all filters</button>
+        </div>
+      </aside>
+
+      <!-- Main feed -->
+      <div>
+        <!-- Search & sort bar -->
+        <div style="display:flex;gap:var(--space-3);margin-bottom:var(--space-5);align-items:center;flex-wrap:wrap">
+          <div class="search-input-wrap" style="flex:1;min-width:220px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input class="search-input" type="text" id="search-input" placeholder="Search problems by title, location, skill…" />
+          </div>
+          <select class="select" id="sort-select" style="width:auto;flex-shrink:0">
+            <option value="newest">Newest first</option>
+            <option value="most-solutions">Most solutions</option>
+            <option value="deadline">Deadline</option>
+            <option value="budget">Budget (high to low)</option>
+          </select>
+          <a href="/post-problem.html" class="btn btn--primary" style="flex-shrink:0">+ Post Problem</a>
+        </div>
+
+        <div style="margin-bottom:var(--space-4);font-size:var(--text-sm);color:var(--color-text-muted)" id="results-count"></div>
+
+        <!-- Problems grid -->
+        <div class="grid-auto" id="problems-grid">
+          <div class="flex-center" style="padding:var(--space-16);grid-column:1/-1"><div class="spinner"></div></div>
+        </div>
+
+        <!-- Pagination -->
+        <div style="display:flex;justify-content:center;margin-top:var(--space-8)" id="pagination"></div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<div id="footer-placeholder"></div>
+<script type="module" src="js/problems.js"></script>
+</body>
+</html>

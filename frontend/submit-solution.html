@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit Solution — Problem2Impact</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/forms.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="page-wrapper">
+
+<div id="navbar-placeholder"></div>
+
+<main class="main-content">
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Submit a Solution</h1>
+      <p>Your solution will be reviewed by AI first, then forwarded to government / industry for evaluation.</p>
+    </div>
+  </div>
+
+  <div class="container" style="padding-top:var(--space-8);padding-bottom:var(--space-16)">
+    <div style="display:grid;grid-template-columns:1fr 340px;gap:var(--space-8);align-items:start">
+
+      <!-- Form -->
+      <div>
+
+        <!-- AI validation result / success (shown after submit) -->
+        <div id="validation-result" style="display:none"></div>
+
+        <!-- Form -->
+        <form id="solution-form" novalidate>
+          <div class="card" style="margin-bottom:var(--space-5)">
+            <div class="card__header"><h4>Your Approach</h4></div>
+            <div class="card__body" style="display:flex;flex-direction:column;gap:var(--space-5)">
+
+              <div class="form-group">
+                <label class="form-label" for="approach">Describe your solution approach *</label>
+                <textarea class="textarea textarea--tall" id="approach" name="approach" placeholder="Explain your solution clearly:&#10;• What technology or method will you use?&#10;• How does it solve the stated problem?&#10;• Who will operate/maintain it?&#10;• Why is this approach feasible?&#10;&#10;Minimum 100 characters." maxlength="5000" data-maxlength="5000"></textarea>
+                <div style="display:flex;justify-content:space-between">
+                  <span class="form-hint">Be specific. Vague or irrelevant submissions will be flagged by AI.</span>
+                  <span class="char-count" data-counter-for="approach">0/5000</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="feasibility">Feasibility Notes *</label>
+                <textarea class="textarea" id="feasibility" name="feasibility" placeholder="Why is this feasible in the given location and context? What are the main challenges and how will you overcome them?" maxlength="2000" data-maxlength="2000"></textarea>
+                <span class="char-count" data-counter-for="feasibility" style="text-align:right;display:block">0/2000</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label form-label--optional" for="implementation">Implementation Plan</label>
+                <textarea class="textarea" id="implementation" name="implementation" placeholder="Break down the implementation into phases or milestones. Include a rough timeline." maxlength="2000"></textarea>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="card" style="margin-bottom:var(--space-5)">
+            <div class="card__header"><h4>Prototype & Estimates</h4></div>
+            <div class="card__body" style="display:flex;flex-direction:column;gap:var(--space-5)">
+
+              <div class="form-group">
+                <label class="form-label form-label--optional" for="prototype-url">Prototype / Demo Link</label>
+                <div class="input-wrap">
+                  <svg class="input-wrap__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                  <input class="input" type="url" id="prototype-url" name="prototypeUrl" placeholder="https://github.com/your-repo or https://demo.yourproject.com" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label form-label--optional">Upload Prototype / Documentation</label>
+                <div class="file-upload" id="prototype-zone">
+                  <input type="file" id="prototype-file" accept=".pdf,.zip,.mp4,.png,.jpg" />
+                  <div class="file-upload__icon">📎</div>
+                  <div class="file-upload__text" id="file-label"><strong>Click or drag</strong> to upload — PDF, ZIP, video, images</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label form-label--optional" for="cost-estimate">Estimated Cost (₹)</label>
+                <div class="input-wrap">
+                  <svg class="input-wrap__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  <input class="input" type="number" id="cost-estimate" name="costEstimate" placeholder="e.g. 150000" min="0" />
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- AI notice -->
+          <div style="padding:var(--space-5);background:var(--color-teal-light);border-radius:var(--radius-lg);border:1px solid rgba(0,180,166,0.3);margin-bottom:var(--space-6);display:flex;gap:var(--space-4)">
+            <div style="font-size:1.5rem;flex-shrink:0">🤖</div>
+            <div>
+              <div style="font-weight:600;font-size:var(--text-sm);color:var(--color-teal-mid);margin-bottom:var(--space-1)">AI Pre-screening</div>
+              <div style="font-size:var(--text-sm);color:var(--color-navy)">Your solution will be automatically reviewed for relevance and quality before reaching government reviewers. Incomplete or irrelevant submissions will be returned with feedback.</div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:var(--space-4)">
+            <button type="submit" id="submit-btn" class="btn btn--primary btn--xl">
+              🚀 Submit Solution
+            </button>
+            <button type="button" class="btn btn--ghost btn--xl" onclick="history.back()">Cancel</button>
+          </div>
+
+        </form>
+
+      </div>
+
+      <!-- Right sidebar: problem context -->
+      <div style="position:sticky;top:80px">
+        <div class="card">
+          <div class="card__header"><h5>Problem Context</h5></div>
+          <div class="card__body" id="problem-context">
+            <div class="flex-center" style="padding:var(--space-6)"><div class="spinner"></div></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:var(--space-4)">
+          <div class="card__body">
+            <h5 style="margin-bottom:var(--space-3)">Tips for a strong solution</h5>
+            <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+              <div style="display:flex;gap:var(--space-2);font-size:var(--text-sm);color:var(--color-text-mid)"><span>✅</span> Address the problem statement directly</div>
+              <div style="display:flex;gap:var(--space-2);font-size:var(--text-sm);color:var(--color-text-mid)"><span>✅</span> Include a realistic cost estimate</div>
+              <div style="display:flex;gap:var(--space-2);font-size:var(--text-sm);color:var(--color-text-mid)"><span>✅</span> Explain how local communities can maintain it</div>
+              <div style="display:flex;gap:var(--space-2);font-size:var(--text-sm);color:var(--color-text-mid)"><span>✅</span> Attach a working prototype or demo if possible</div>
+              <div style="display:flex;gap:var(--space-2);font-size:var(--text-sm);color:var(--color-error)"><span>❌</span> Avoid vague or generic descriptions</div>
+              <div style="display:flex;gap:var(--space-2);font-size:var(--text-sm);color:var(--color-error)"><span>❌</span> Don't copy solutions from other submissions</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Validating overlay -->
+  <div id="validating-overlay" style="display:none;position:fixed;inset:0;background:rgba(13,27,42,0.7);backdrop-filter:blur(6px);z-index:2000;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-6);color:var(--color-white);text-align:center">
+    <div style="width:64px;height:64px;border:4px solid rgba(255,255,255,0.2);border-top-color:var(--color-teal);border-radius:50%;animation:spin .8s linear infinite"></div>
+    <div>
+      <div style="font-family:var(--font-display);font-size:var(--text-xl);margin-bottom:var(--space-2)">AI is reviewing your solution…</div>
+      <div style="font-size:var(--text-sm);color:rgba(255,255,255,0.65)">Checking relevance, feasibility, and quality. This takes a few seconds.</div>
+    </div>
+  </div>
+
+</main>
+
+<div id="footer-placeholder"></div>
+<style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+<script type="module" src="js/submit-solution.js"></script>
+</body>
+</html>

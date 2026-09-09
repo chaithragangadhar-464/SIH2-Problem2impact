@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Workspace — Problem2Impact</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/forms.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="page-wrapper">
+
+<div id="navbar-placeholder"></div>
+
+<main class="main-content">
+
+  <div class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/problems.html">Problems</a>
+        <span class="breadcrumb__sep">›</span>
+        <a href="#" id="team-problem-link">Problem</a>
+        <span class="breadcrumb__sep">›</span>
+        <span class="breadcrumb__current">Team Workspace</span>
+      </div>
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:var(--space-4)">
+        <div>
+          <h1 id="team-name" style="color:var(--color-white)">Loading…</h1>
+          <div style="font-size:var(--text-sm);color:rgba(255,255,255,0.6);margin-top:var(--space-2)" id="team-problem-title"></div>
+        </div>
+        <div style="display:flex;gap:var(--space-3)">
+          <button class="btn btn--secondary" id="invite-btn">+ Invite Member</button>
+          <a href="#submit" class="btn btn--saffron">Submit Solution</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="team-layout">
+
+      <!-- Main area -->
+      <div>
+
+        <!-- Tabs -->
+        <div class="tabs" style="margin-bottom:var(--space-6)">
+          <button class="tab active" data-tab="tasks">Task Board</button>
+          <button class="tab" data-tab="members">Members</button>
+          <button class="tab" data-tab="files">Files</button>
+          <button class="tab" data-tab="discussion">Discussion</button>
+        </div>
+
+        <!-- Task board tab -->
+        <div class="tab-panel active" id="tab-tasks">
+          <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-5)">
+            <input class="input" type="text" id="new-task-input" placeholder="Add a new task…" style="flex:1" />
+            <button class="btn btn--primary btn--sm" id="add-task-btn">Add Task</button>
+          </div>
+
+          <div class="task-board">
+            <div class="task-column">
+              <div class="task-column__header">
+                <div class="task-column__title">To Do</div>
+                <div class="task-column__count">3</div>
+              </div>
+              <div class="task-cards" id="col-todo">
+                <div class="task-card" draggable="true">
+                  <div class="task-card__title">Research existing water purification tech</div>
+                  <div class="task-card__desc">Look into solar-powered RO and biosand filter options</div>
+                  <div class="task-card__footer">
+                    <span class="badge badge--navy">Research</span>
+                    <div class="avatar avatar--sm" style="background:var(--color-teal-light);color:var(--color-teal-mid)">AS</div>
+                  </div>
+                </div>
+                <div class="task-card" draggable="true">
+                  <div class="task-card__title">Set up IoT sensor prototype</div>
+                  <div class="task-card__desc">ESP32 + TDS sensor for water quality measurement</div>
+                  <div class="task-card__footer">
+                    <span class="badge badge--saffron">Hardware</span>
+                    <div class="avatar avatar--sm" style="background:var(--color-saffron-lt);color:#c4720e">KR</div>
+                  </div>
+                </div>
+                <div class="task-card" draggable="true">
+                  <div class="task-card__title">Draft cost estimate document</div>
+                  <div class="task-card__desc">Breakdown of materials, labour, and maintenance</div>
+                  <div class="task-card__footer">
+                    <span class="badge badge--gray">Finance</span>
+                    <div class="avatar avatar--sm">RK</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="task-column">
+              <div class="task-column__header">
+                <div class="task-column__title">In Progress</div>
+                <div class="task-column__count">2</div>
+              </div>
+              <div class="task-cards">
+                <div class="task-card" draggable="true">
+                  <div class="task-card__title">Build mobile monitoring dashboard</div>
+                  <div class="task-card__desc">React Native app showing real-time water quality data</div>
+                  <div class="task-card__footer">
+                    <span class="badge badge--teal">Dev</span>
+                    <div class="avatar avatar--sm" style="background:var(--color-badge-bg);color:var(--color-badge-text)">ST</div>
+                  </div>
+                </div>
+                <div class="task-card" draggable="true">
+                  <div class="task-card__title">Community needs assessment</div>
+                  <div class="task-card__desc">Survey 50 households in Barmer district</div>
+                  <div class="task-card__footer">
+                    <span class="badge badge--gray">Field</span>
+                    <div class="avatar avatar--sm" style="background:var(--color-teal-light);color:var(--color-teal-mid)">AS</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="task-column">
+              <div class="task-column__header">
+                <div class="task-column__title">Done</div>
+                <div class="task-column__count">1</div>
+              </div>
+              <div class="task-cards">
+                <div class="task-card" draggable="true">
+                  <div class="task-card__title">Literature review on water crises in Rajasthan</div>
+                  <div class="task-card__desc">Completed with 12 key sources identified</div>
+                  <div class="task-card__footer">
+                    <span class="badge badge--success">✓ Done</span>
+                    <div class="avatar avatar--sm" style="background:var(--color-teal-light);color:var(--color-teal-mid)">AS</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Members tab -->
+        <div class="tab-panel" id="tab-members">
+          <div style="display:flex;flex-direction:column;gap:var(--space-3)" id="members-list">
+            <div class="flex-center" style="padding:var(--space-8)"><div class="spinner"></div></div>
+          </div>
+        </div>
+
+        <!-- Files tab -->
+        <div class="tab-panel" id="tab-files">
+          <div class="file-upload" style="margin-bottom:var(--space-5)">
+            <input type="file" multiple />
+            <div class="file-upload__icon">📁</div>
+            <div class="file-upload__text"><strong>Upload team files</strong> — designs, datasets, reports</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:var(--space-2)">
+            <div class="file-item">
+              <span>📄</span>
+              <span class="file-item__name">Water_Quality_Research.pdf</span>
+              <span class="file-item__size">2.4 MB</span>
+              <a href="#" class="btn btn--ghost btn--sm">Download</a>
+            </div>
+            <div class="file-item">
+              <span>📊</span>
+              <span class="file-item__name">Cost_Estimate_v2.xlsx</span>
+              <span class="file-item__size">84 KB</span>
+              <a href="#" class="btn btn--ghost btn--sm">Download</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Discussion tab -->
+        <div class="tab-panel" id="tab-discussion">
+          <div style="display:flex;flex-direction:column;gap:var(--space-4);margin-bottom:var(--space-5)">
+            <div style="display:flex;gap:var(--space-3)">
+              <div class="avatar" style="background:var(--color-teal-light);color:var(--color-teal-mid);flex-shrink:0">AS</div>
+              <div style="background:var(--color-off-white);border-radius:var(--radius-lg);padding:var(--space-4);flex:1">
+                <div style="font-weight:600;font-size:var(--text-sm);margin-bottom:var(--space-1)">Ananya Sharma <span style="font-weight:400;color:var(--color-text-muted)">· 2 hours ago</span></div>
+                <p style="font-size:var(--text-sm);color:var(--color-text-mid)">I've completed the literature review. Looks like biosand filters combined with UV sterilisation could be more cost-effective than RO for this location. Sharing the PDF now.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:var(--space-3)">
+              <div class="avatar" style="background:var(--color-saffron-lt);color:#c4720e;flex-shrink:0">KR</div>
+              <div style="background:var(--color-off-white);border-radius:var(--radius-lg);padding:var(--space-4);flex:1">
+                <div style="font-weight:600;font-size:var(--text-sm);margin-bottom:var(--space-1)">Karthik Rajan <span style="font-weight:400;color:var(--color-text-muted)">· 1 hour ago</span></div>
+                <p style="font-size:var(--text-sm);color:var(--color-text-mid)">Great work! I've sourced the ESP32 sensors. We should test at 3 water points minimum for the prototype. Can someone coordinate with the village panchayat?</p>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;gap:var(--space-3);align-items:flex-end">
+            <textarea class="textarea" placeholder="Type a message to your team…" style="flex:1;min-height:60px;resize:none"></textarea>
+            <button class="btn btn--primary" style="flex-shrink:0">Send</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right sidebar -->
+      <aside>
+
+        <!-- Skill gap -->
+        <div style="margin-bottom:var(--space-5)">
+          <h5 style="margin-bottom:var(--space-3)">Team Skill Coverage</h5>
+          <div id="skill-gap">
+            <div class="flex-center"><div class="spinner"></div></div>
+          </div>
+        </div>
+
+        <!-- AI match suggestions -->
+        <div class="ai-match-panel">
+          <div class="ai-match-panel__header">
+            <div>
+              <div class="ai-match-panel__title">Suggested Collaborators</div>
+              <div class="ai-match-panel__subtitle">Fill your skill gaps</div>
+            </div>
+            <div class="ai-badge">🤖 AI</div>
+          </div>
+          <div class="match-list" id="match-list">
+            <div class="flex-center" style="padding:var(--space-6)"><div class="spinner"></div></div>
+          </div>
+        </div>
+
+        <!-- Submit solution shortcut -->
+        <div class="card" style="margin-top:var(--space-5)" id="submit">
+          <div class="card__body" style="text-align:center">
+            <div style="font-size:2rem;margin-bottom:var(--space-3)">🚀</div>
+            <h5 style="margin-bottom:var(--space-2)">Ready to submit?</h5>
+            <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin-bottom:var(--space-4)">Once your solution is ready, submit it for AI validation and government review.</p>
+            <a id="submit-solution-link" href="/submit-solution.html" class="btn btn--primary btn--full">Submit Solution</a>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script type="module">
+  // Wire up tab nav
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(`tab-${tab.dataset.tab}`)?.classList.add('active');
+    });
+  });
+
+  // Attach problem id to submit link
+  const params = new URLSearchParams(window.location.search);
+  const teamId = params.get('id');
+  if (teamId) {
+    const link = document.getElementById('submit-solution-link');
+    if (link) link.href = `/submit-solution.html?teamId=${teamId}`;
+  }
+</script>
+<script type="module" src="js/team.js"></script>
+</body>
+</html>

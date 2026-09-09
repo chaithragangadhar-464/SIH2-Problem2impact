@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Challenges — Problem2Impact</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="page-wrapper">
+
+<div id="navbar-placeholder"></div>
+
+<main class="main-content">
+
+  <div class="page-header" id="explore-header">
+    <div class="container">
+      <h1>Explore Challenges</h1>
+      <p>Browse problems by category and find challenges that match your expertise and passion.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section--sm">
+      <!-- Category grid (shown by default) -->
+      <div class="category-grid" id="category-grid">
+        <div class="flex-center" style="padding:var(--space-16);grid-column:1/-1"><div class="spinner"></div></div>
+      </div>
+
+      <!-- Category problems (shown after selecting a category) -->
+      <div id="category-results" style="display:none"></div>
+    </div>
+  </div>
+
+</main>
+
+<div id="footer-placeholder"></div>
+<script type="module" src="js/explore-challenges.js"></script>
+</body>
+</html>
